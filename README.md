@@ -37,12 +37,21 @@ trader-jarvis/
 
 ## Quick Start
 
+### Easy Start (Windows)
+Simply run the PowerShell script to start both servers:
+```powershell
+.\start.ps1
+```
+This will open two new PowerShell windows - one for the backend and one for the frontend.
+
 ### Prerequisites
 - Python 3.11+
 - Node.js 18+
 - npm or yarn
 
-### 1. Backend Setup
+### Manual Setup
+
+#### 1. Backend Setup
 
 ```bash
 cd backend
@@ -69,7 +78,7 @@ python main.py
 
 The backend will start on http://localhost:8000
 
-### 2. Frontend Setup
+#### 2. Frontend Setup
 
 ```bash
 cd frontend
