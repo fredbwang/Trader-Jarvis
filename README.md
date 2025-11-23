@@ -44,6 +44,12 @@ Simply run the PowerShell script to start both servers:
 ```
 This will open two new PowerShell windows - one for the backend and one for the frontend.
 
+To stop both servers:
+```powershell
+.\stop.ps1
+```
+This will gracefully terminate all backend and frontend processes.
+
 ### Prerequisites
 - Python 3.11+
 - Node.js 18+
