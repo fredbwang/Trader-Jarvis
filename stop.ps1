@@ -78,9 +78,10 @@ Write-Host "Looking for Backend Server (Python)..." -ForegroundColor Yellow
 
 # Look for Python processes running the backend
 $backendProcesses = Get-Process python* -ErrorAction SilentlyContinue | Where-Object {
+    $_.CommandLine -like "*trader-jarvis-backend.py*" -or
     $_.CommandLine -like "*main.py*" -or
     $_.Path -like "*Trader-Jarvis\backend*" -or
-    $_.CommandLine -like "*backend*main.py*"
+    $_.CommandLine -like "*backend*"
 }
 
 # Also look for uvicorn processes (alternative backend runner)
@@ -112,6 +113,7 @@ Write-Host "Looking for Frontend Server (Node.js)..." -ForegroundColor Yellow
 
 # Look for Node.js processes running Next.js
 $frontendProcesses = Get-Process node* -ErrorAction SilentlyContinue | Where-Object {
+    $_.CommandLine -like "*dev:jarvis*" -or
     $_.CommandLine -like "*next dev*" -or
     $_.CommandLine -like "*next*dev*" -or
     $_.Path -like "*Trader-Jarvis\frontend*"
@@ -137,6 +139,7 @@ $shellProcesses = @()
 
 # Look for bash processes
 $bashProcesses = Get-Process bash* -ErrorAction SilentlyContinue | Where-Object {
+    $_.CommandLine -like "*trader-jarvis-backend.py*" -or
     $_.CommandLine -like "*python*main.py*" -or
     $_.CommandLine -like "*npm*run*dev*" -or
     $_.CommandLine -like "*backend*" -or
@@ -149,6 +152,7 @@ if ($bashProcesses) {
 
 # Look for sh processes
 $shProcesses = Get-Process sh* -ErrorAction SilentlyContinue | Where-Object {
+    $_.CommandLine -like "*trader-jarvis-backend.py*" -or
     $_.CommandLine -like "*python*main.py*" -or
     $_.CommandLine -like "*npm*run*dev*"
 }

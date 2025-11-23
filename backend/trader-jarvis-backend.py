@@ -134,7 +134,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app",
+        "trader-jarvis-backend:app",
         host=settings.host,
         port=settings.port,
         reload=settings.env == "development"

@@ -1,4 +1,5 @@
 """Application configuration using pydantic-settings."""
+import os
 from pydantic_settings import BaseSettings
 from typing import List
 
@@ -48,7 +49,8 @@ class Settings(BaseSettings):
         return [origin.strip() for origin in self.cors_origins.split(",")]
 
     class Config:
-        env_file = ".env"
+        # Support loading different env files (e.g., .env.test)
+        env_file = os.getenv("ENV_FILE", ".env")
         case_sensitive = False
 
 

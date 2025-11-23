@@ -40,11 +40,11 @@ FastAPI backend for the Trader Jarvis trading platform.
 
 5. **Run the server:**
    ```bash
-   python main.py
+   python trader-jarvis-backend.py
    ```
    Or with uvicorn:
    ```bash
-   uvicorn main:app --reload --host 127.0.0.1 --port 8000
+   uvicorn trader-jarvis-backend:app --reload --host 127.0.0.1 --port 8000
    ```
 
 ## API Endpoints

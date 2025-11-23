@@ -79,7 +79,7 @@ cp .env.example .env
 # Edit .env with your settings
 
 # Run the server
-python main.py
+python trader-jarvis-backend.py
 ```
 
 The backend will start on http://localhost:8000

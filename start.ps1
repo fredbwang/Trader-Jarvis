@@ -18,14 +18,14 @@ if (-Not (Test-Path "frontend")) {
 
 # Start Backend Server
 Write-Host "Starting Backend Server (FastAPI)..." -ForegroundColor Green
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\backend'; Write-Host 'Backend Server Starting...' -ForegroundColor Green; python main.py"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\backend'; Write-Host 'Trader Jarvis Backend Starting...' -ForegroundColor Green; python trader-jarvis-backend.py"
 
 # Wait a moment for backend to initialize
 Start-Sleep -Seconds 2
 
 # Start Frontend Server
 Write-Host "Starting Frontend Server (Next.js)..." -ForegroundColor Green
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\frontend'; Write-Host 'Frontend Server Starting...' -ForegroundColor Green; npm run dev"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\frontend'; Write-Host 'Trader Jarvis Frontend Starting...' -ForegroundColor Green; npm run dev:jarvis"
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
